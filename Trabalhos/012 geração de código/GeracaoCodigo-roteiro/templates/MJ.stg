@@ -1,0 +1,157 @@
+
+group MJ;
+
+
+prog(numvars, methods) ::= <<
+//------------------------------
+data <numvars>
+
+// jumps directly to method named main
+jmp main
+
+// code for the methods:
+
+<methods>
+>>
+
+
+method(name, params, vars, instructions) ::= <<
+
+label <name>
+enter <params>, <vars>
+
+<instructions>
+
+exit
+return
+>>
+
+
+const(val) ::= <<
+const <val>
+>>
+
+
+opArit(op, exp1, exp2) ::= <<
+<exp1>
+<exp2>
+<op>
+>>
+
+
+unarySub(exp) ::= <<
+load 0
+<exp>
+sub
+>>
+
+
+assign(read, write, exp) ::= <<
+<read>
+<exp>
+<write>
+>>
+
+
+identRead(global, offset) ::= <<<if(global)>getstatic <offset><else>load <offset><endif>
+>>
+
+
+identWrite(global, offset) ::= <<<if(global)>putstatic <offset><else>store <offset><endif>
+>>
+
+
+dotRead(desig, offset) ::= <<
+<desig>
+getfield <offset>
+>>
+
+
+dotWrite(offset) ::= <<
+putfield <offset>
+>>
+
+
+array(desig, index, isWrite) ::= <<
+<desig>
+<index>
+<if(!isWrite)>aload<endif>
+>>
+
+
+arrayWrite() ::= <<
+astore
+>>
+
+
+cond(op, exp1, exp2, label) ::= <<
+<exp1>
+<exp2>
+j<op> <label>
+>>
+
+
+while(init, cond, iftrue, statement, iffalse) ::= <<
+label <init>
+<cond>
+jmp <iffalse>
+label <iftrue>
+<statement>
+jmp <init>
+label <iffalse>
+>>
+
+
+return(exp) ::= <<
+<exp>
+exit
+return
+>>
+
+
+read(expR, exprW) ::= <<
+<expR>
+read
+<expW>
+>>
+
+
+print(exp, num) ::= <<
+<exp>
+const <num>
+print
+>>
+
+
+new(size) ::= "new <size>"
+
+
+newarray(numexp) ::= <<
+<numexp>
+newarray 1
+>>
+
+
+call(name, params) ::= <<
+<params>
+call <name>
+>>
+
+
+if(cond, iftrue, statement, iffalse) ::= <<
+<cond>
+jmp <iffalse>
+label <iftrue>
+<statement>
+label <iffalse>
+>>
+
+
+ifelse(cond, iftrue, statementif, iffalse, statementelse) ::= <<
+<cond>
+jmp <iffalse>
+label <iftrue>
+<statementif>
+label <iffalse>
+<statementelse>
+>>

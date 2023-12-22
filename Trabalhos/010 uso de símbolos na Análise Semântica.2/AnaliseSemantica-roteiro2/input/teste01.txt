@@ -1,0 +1,36 @@
+program P
+
+int var1, var2, var3;
+final int size = 10;
+
+class Table {
+  int[] pos;
+  int[] neg;
+  Table prox;
+  int i;
+}
+
+class Point
+{
+  int x;
+  int y;
+}
+
+Table val;
+
+{
+  
+  int f1(int a, int b)
+  int i;
+  float f;
+  {
+  }
+
+  void main()
+  Point p1;
+  {
+  	p1 = new Point;
+  	p1.x = 10;
+  }
+
+}

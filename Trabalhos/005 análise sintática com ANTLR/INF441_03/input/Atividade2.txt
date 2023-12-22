@@ -1,0 +1,9 @@
+program P
+
+int f() {
+	if (a < d) 
+		if (d > 0) 
+			d = 0; 
+		else a = 0;
+	else if (z > 10){}
+}

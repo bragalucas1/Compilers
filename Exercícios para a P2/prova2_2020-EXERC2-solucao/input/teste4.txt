@@ -1,0 +1,8 @@
+var x y z
+{
+  if (x >= 0)
+  	y = 5;
+  else
+  	y = 6;
+  z = 7;
+}

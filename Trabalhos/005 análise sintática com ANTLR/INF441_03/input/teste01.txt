@@ -1,0 +1,7 @@
+program P
+
+int f() {
+	if ( teste > teste){}
+  a = -b + c * d;
+  return a;
+}

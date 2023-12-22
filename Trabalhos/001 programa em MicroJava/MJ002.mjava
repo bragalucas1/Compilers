@@ -1,0 +1,45 @@
+program MJ002
+final int limite = 100;
+{
+    void main()
+        int entrada, i, j, media;
+        int[] valores;
+        {
+            valores = new int[limite];
+            i = 0;
+            j = 0;
+            media = 0;
+            entrada = 0;
+
+            //preenchendo o vetor
+            read(entrada);
+            while(entrada >= 0){
+                valores[i] = entrada;
+                i = i + 1;
+                if(i > limite){
+                    entrada = -1;
+                }
+                else{
+                    read(entrada);
+                }
+            }
+
+            //calcuando o somatorio
+            while(i >= j){
+                media = media + valores[j];
+                j = j + 1;
+            }
+
+            //calculando a media
+            media = media/i;
+
+            //inprimir os que estão acima da media
+            j = 0;
+            while(i >= j){
+                j = j + 1;
+                if(valores[j] > media)
+                print(valores[j]);
+
+            }
+        }
+}

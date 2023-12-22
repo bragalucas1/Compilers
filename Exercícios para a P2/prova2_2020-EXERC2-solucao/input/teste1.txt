@@ -1,0 +1,7 @@
+var x y z
+{
+  x = 1;
+  if (x >= 0) y = 2;
+  z = k;
+  print z + 1;
+}

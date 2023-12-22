@@ -1,0 +1,29 @@
+program P
+
+int a, b;
+
+{
+
+int f(int x, int y)
+int c, d, e;
+{
+  d = 12;
+  b = 13;
+  y = (14 + e) * a;
+}
+
+void main()
+int x1, x2;
+{
+	x1=1;
+	x2=2;
+	if(x1 == 1){
+		print("aqui");
+	}
+	else{
+		print("aq2");
+	}
+	 
+}
+
+}
